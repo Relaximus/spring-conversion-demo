@@ -1,5 +1,6 @@
 package com.example.demo.controllers
 
+import com.example.demo.config.BookDatesFormattersRegistrar
 import com.example.demo.config.CustomPropertyEditorRegistrar
 import com.example.demo.model.Book
 import groovy.util.logging.Slf4j
@@ -22,7 +23,7 @@ class GeneralController {
         customPropertyEditorRegistrar.registerCustomEditors(binder)
     }
 
-    @PostMapping(value = "/book" )
+    @PostMapping(value = "/book")
     @ResponseStatus(HttpStatus.CREATED)
     def createBook(@ModelAttribute Book book) {
         log.info "Created book: $book"
