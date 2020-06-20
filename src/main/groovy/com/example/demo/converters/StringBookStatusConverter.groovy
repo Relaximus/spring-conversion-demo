@@ -5,7 +5,7 @@ import groovy.util.logging.Slf4j
 import org.springframework.core.convert.converter.Converter
 
 @Slf4j
-class BookStatusConverter implements Converter<String, BookStatus> {
+class StringBookStatusConverter implements Converter<String, BookStatus> {
     @Override
     BookStatus convert(String source) {
         log.info "Converting $source"

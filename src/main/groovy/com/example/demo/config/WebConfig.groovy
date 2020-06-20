@@ -1,6 +1,7 @@
 package com.example.demo.config
 
-import com.example.demo.converters.BookStatusConverter
+import com.example.demo.converters.IntegerBookStatusConverter
+import com.example.demo.converters.StringBookStatusConverter
 import com.example.demo.formatters.IssuedDateFormatter
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -12,7 +13,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 class WebConfig implements WebMvcConfigurer {
     @Override
     void addFormatters(FormatterRegistry registry) {
-        registry.addConverter(new BookStatusConverter())
+        registry.addConverter(new StringBookStatusConverter())
+        registry.addConverter(new IntegerBookStatusConverter())
         bookDatesFormattersRegistrar().registerFormatters(registry)
     }
 

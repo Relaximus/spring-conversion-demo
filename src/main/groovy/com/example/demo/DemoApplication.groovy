@@ -24,7 +24,7 @@ class DemoApplication implements CommandLineRunner {
 
 		// Demonstrating that the conversion service could be used programmatically
 		// even being configured in WebMvcConfigurer
-		def status = conversionService.convert('forbidden', BookStatus)
+		def status = conversionService.convert(1, BookStatus) // Should be FORBIDDEN
 		log.info "Runner... status after conversion: $status"
 	}
 }
